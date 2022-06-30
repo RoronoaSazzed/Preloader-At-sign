@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pre Loader Animation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parentDiv {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background-color: lightskyblue;
+      }
+
+      .wrapper {
+        width: 600px;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+      }
+
+      #top-at-the-rate {
+        stroke-dasharray: 1707.6318359375px;
+        stroke-dashoffset: 1707.6318359375px;
+        animation: dashIn 5s forwards;
+      }
+
+      @keyframes dashIn {
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      }
+
+      #top-top-left,
+      #top-bottom-left {
+        stroke-dasharray: 105px;
+        stroke-dashoffset: 105px;
+        animation: dashIn 2.5s 5s forwards;
+      }
+
+      #top-top-right,
+      #top-bottom-right {
+        stroke-dasharray: 118px;
+        stroke-dashoffset: 118px;
+        animation: dashIn 2.5s 5s forwards;
+      }
+
+      .loading-digit {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="wrapper">
+        <svg
+          width="100%"
+          min-height="0"
+          viewBox="0 0 573 683"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="pre-loader">
+            <g id="bottom">
+              <path
+                id="at-the-rate"
+                d="M358.08 383.53C325.706 433.982 236.384 430.226 207.08 383.53C192 359.5 193.338 309.419 210.08 285.03C235.5 248 326.247 236.605 361.58 285.03C361.58 326.03 361.58 397.03 361.58 397.03C361.58 397.03 379.08 423.03 407.58 423.03C433.356 423.03 452 404.5 458.08 383.53C464.161 362.561 464.288 308.867 458.08 285.03C448.052 246.522 435.749 222.77 407.58 196.53C385.056 175.548 358.08 163.447 339.08 157.53C307.444 147.679 258.461 149.699 229.58 157.53C210.08 162.817 180.929 171.855 153.08 196.53C119.457 226.322 106.429 263.046 100.08 285.03C90.8027 317.154 92.2089 371.474 100.08 397.03C114.456 443.706 141.343 470.938 153.08 481.03C163.425 489.924 183.116 506.327 229.58 518.53C276.045 530.733 319.957 527.029 339.08 518.53C349.394 513.947 354.98 510.707 364.08 504.03"
+                stroke="#121212"
+                stroke-width="45"
+              />
+            </g>
+            <g id="top">
+              <path
+                id="top-at-the-rate"
+                d="M358.08 383.53C325.706 433.982 236.384 430.226 207.08 383.53C192 359.5 193.338 309.419 210.08 285.03C235.5 248 326.247 236.605 361.58 285.03C361.58 326.03 361.58 397.03 361.58 397.03C361.58 397.03 379.08 423.03 407.58 423.03C433.356 423.03 452 404.5 458.08 383.53C464.161 362.561 464.288 308.867 458.08 285.03C448.052 246.522 435.749 222.77 407.58 196.53C385.056 175.548 358.08 163.447 339.08 157.53C307.444 147.679 258.461 149.699 229.58 157.53C210.08 162.817 180.929 171.855 153.08 196.53C119.457 226.322 106.429 263.046 100.08 285.03C90.8027 317.154 92.2089 371.474 100.08 397.03C114.456 443.706 141.343 470.938 153.08 481.03C163.425 489.924 183.116 506.327 229.58 518.53C276.045 530.733 319.957 527.029 339.08 518.53C349.394 513.947 354.98 510.707 364.08 504.03"
+                stroke="white"
+                stroke-width="50"
+              />
+              <path
+                id="top-top-left"
+                d="M223.255 160V55"
+                stroke="white"
+                stroke-width="50"
+              />
+              <path
+                id="top-bottom-left"
+                d="M223.255 520.509V625.509"
+                stroke="white"
+                stroke-width="50"
+              />
+              <path
+                id="top-top-right"
+                d="M334.255 160C334.255 152 334.255 78 334.255 42"
+                stroke="white"
+                stroke-width="50"
+              />
+              <path
+                id="top-bottom-right"
+                d="M334.255 520.509C334.255 528.509 334.255 602.509 334.255 638.509"
+                stroke="white"
+                stroke-width="50"
+              />
+            </g>
+          </g>
+        </svg>
+
+        <p class="loading-digit">65%</p>
+      </div>
+    </div>
+
+    <script>
+      const introText = document.querySelectorAll("#top path");
+
+      for (let i = 0; i < introText.length; i++) {
+        console.log(`letter ${i} is ${introText[i].getTotalLength()}`);
+      }
+    </script>
+  </body>
+</html>
